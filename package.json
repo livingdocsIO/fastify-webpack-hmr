@@ -1,9 +1,9 @@
 {
-  "name": "fastify-webpack-hmr",
-  "version": "3.0.0",
+  "name": "@livingdocs/fastify-webpack-hmr",
+  "version": "0.0.0",
   "description": "Webpack hot module reloading for Fastify",
   "main": "plugin.js",
-  "engines": ">=10",
+  "engines": ">=14",
   "scripts": {
     "coverage": "tap test/**/*.test.js --cov",
     "lint": "standard --fix",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lependu/fastify-webpack-hmr.git"
+    "url": "https://github.com/livingdocsIO/fastify-webpack-hmr"
   },
   "keywords": [
     "fastify",
@@ -20,12 +20,11 @@
     "webpack",
     "hmr"
   ],
-  "author": "Ákos Kovács <lependu@protonmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lependu/fastify-webpack-hmr/issues"
+    "url": "https://github.com/livingdocsIO/fastify-webpack-hmr/issues"
   },
-  "homepage": "https://github.com/lependu/fastify-webpack-hmr#readme",
+  "homepage": "https://github.com/livingdocsIO/fastify-webpack-hmr#readme",
   "devDependencies": {
     "fastify": "^3.0.3",
     "simple-get": "^4.0.0",
@@ -44,5 +43,8 @@
       "example/**/*",
       "test/*"
     ]
+  },
+  "release": {
+    "extends": "@livingdocs/semantic-release-presets/npm-github"
   }
 }

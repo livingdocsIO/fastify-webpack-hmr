@@ -1,0 +1,35 @@
+---
+kind: pipeline
+name: default
+
+clone:
+  depth: 50
+
+steps:
+- name: npm-install
+  image: node:16-alpine
+  commands: ["npm install"]
+
+- name: test-node-14
+  image: node:14-alpine
+  commands: ["npm run test -s"]
+
+- name: test-node-16
+  image: node:16-alpine
+  commands: ["npm run test -s"]
+
+- name: release
+  image: livingdocs/semantic-release:v2.0.1
+  environment:
+    GH_TOKEN:
+      from_secret: GH_TOKEN
+    NPM_TOKEN:
+      from_secret: NPM_TOKEN
+
+trigger:
+  event: [push]
+---
+kind: signature
+hmac: 9b754b4054f9f5c3fa4df591c3d7a3882137a89bac5cf746e743bcc14833d187
+
+...
