@@ -1,31 +1,14 @@
-# fastify-webpack-hmr
+# @livingdocs/fastify-webpack-hmr
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
-[![Build Status](https://travis-ci.org/lependu/fastify-webpack-hmr.svg?branch=master)](https://travis-ci.org/lependu/fastify-webpack-hmr)
-[![Known Vulnerabilities](https://snyk.io/test/github/lependu/fastify-webpack-hmr/badge.svg)](https://snyk.io/test/github/lependu/fastify-webpack-hmr)
-[![Coverage Status](https://coveralls.io/repos/github/lependu/fastify-webpack-hmr/badge.svg?branch=master)](https://coveralls.io/github/lependu/fastify-webpack-hmr?branch=master)
-![npm (scoped)](https://img.shields.io/npm/v/fastify-webpack-hmr/latest)
-![npm](https://img.shields.io/npm/dm/fastify-webpack-hmr.svg)
+> :warning: This project is meant to be used in development environment only.  
 
-Inspired by [koa-webpack](https://github.com/shellscape/koa-webpack) plugin.  
+This is a fork of https://github.com/lependu/fastify-webpack-hmr/ with support for [Webpack v5](https://github.com/lependu/fastify-webpack-hmr/pull/100).
 Under the hood it sets up [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) and [webpack-hot-middleware](https://github.com/webpack-contrib/webpack-hot-middleware).
 
 ## Install
 ```
-$ npm i --save-dev fastify-webpack-hmr
+$ npm i --save-dev @livingdocs/fastify-webpack-hmr
 ```
-
-## Versions
-
-The plugin supports the following `Fastify` and `Webpack` versions. Please refer to corresponding branch in PR and issues.
-
-version | branch | fastify | webpack | end of support
---------|--------|---------|------------|--------  
-1.x | [1.x](https://github.com/lependu/fastify-webpack-hmr/tree/1.x) | [1.x](https://github.com/fastify/fastify/tree/1.x) | [4.x](https://github.com/webpack/webpack/tree/webpack-4) | EOL 
-2.x | [2.x](https://github.com/lependu/fastify-webpack-hmr/tree/2.x) | [2.x](https://github.com/fastify/fastify/tree/2.x) | [4.x](https://github.com/webpack/webpack/tree/webpack-4)| TBD  
-3.x | [master](https://github.com/lependu/fastify-webpack-hmr/tree/master) | [3.x](https://github.com/fastify/fastify/tree/master) | [4.x](https://github.com/webpack/webpack/tree/webpack-4)| TBD  
-
-> :warning: This project is meant to be used in development environment only.  
 
 ## Usage
 
@@ -39,7 +22,7 @@ If you pass a custom `webpack compiler` instance to the plugin, it will pass tha
 *Note:* if you pass a `compiler` option the plugin omits the `config` option.
 ```js
 const fastify = require('fastify')()
-const HMR = require('fastify-webpack-hmr')
+const HMR = require('@livingdocs/fastify-webpack-hmr')
 const webpack = require('webpack')
 const webpackConfig = require('path/to/your/webpack/config')
 
@@ -58,7 +41,7 @@ If you pass this option instead of a `compiler`, the plugin tries to set up the 
 If config is a `string` it has to be a path to a valid webpack configuration file.
 ```js
 const fastify = require('fastify')()
-const HMR = require('fastify-webpack-hmr')
+const HMR = require('@livingdocs/fastify-webpack-hmr')
 const { join } = require('path')
 
 const config = join(__dirname, 'path.to.your.webpack.config')
@@ -71,7 +54,7 @@ fastify.listen(3000)
 Or you can directly pass a valid webpack configuration `object`.
 ```js
 const fastify = require('fastify')()
-const HMR = require('fastify-webpack-hmr')
+const HMR = require('@livingdocs/fastify-webpack-hmr')
 const { join } = require('path')
 const hotConf = 'webpack-hot-middleware/client?path=/__webpack_hmr'
 
@@ -108,7 +91,7 @@ In multi compiler mode you must pass the `webpackDev.publicPath` option to the p
 
 ```js
 const fastify = require('fastify')()
-const HMR = require('fastify-webpack-hmr')
+const HMR = require('@livingdocs/fastify-webpack-hmr')
 const { join } = require('path')
 const hotConf = 'webpack-hot-middleware/client?path=/__webpack_hmr'
 
