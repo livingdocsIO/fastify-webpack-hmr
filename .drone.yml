@@ -7,15 +7,15 @@ clone:
 
 steps:
 - name: npm-install
-  image: node:16-alpine
+  image: node:18-alpine
   commands: ["npm install"]
-
-- name: test-node-14
-  image: node:14-alpine
-  commands: ["npm run test -s"]
 
 - name: test-node-16
   image: node:16-alpine
+  commands: ["npm run test -s"]
+
+- name: test-node-18
+  image: node:18-alpine
   commands: ["npm run test -s"]
 
 - name: release
@@ -30,6 +30,6 @@ trigger:
   event: [push]
 ---
 kind: signature
-hmac: 9b754b4054f9f5c3fa4df591c3d7a3882137a89bac5cf746e743bcc14833d187
+hmac: 2a80555ac4042eab01a04952af4eb216e88fcd5a818ffef5f26fadb733a436a9
 
 ...
