@@ -33,7 +33,7 @@ async function fastifyWebpack (instance, opts) {
     webpackDev.publicPath = publicPath
   }
 
-  await instance.register(require('middie'))
+  await instance.register(require('@fastify/middie'))
   const dev = webpackDevMiddleware(compiler, webpackDev)
   instance.use(dev)
 

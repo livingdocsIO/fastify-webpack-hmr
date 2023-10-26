@@ -7,7 +7,7 @@
   "scripts": {
     "coverage": "tap test/**/*.test.js --cov",
     "lint": "standard --fix",
-    "test": "standard --fix && tap test/**/*.test.js",
+    "test": "standard --fix && tap test/**/*.test.js --allow-incomplete-coverage",
     "example": "node example/server.js"
   },
   "repository": {
@@ -26,17 +26,17 @@
   },
   "homepage": "https://github.com/livingdocsIO/fastify-webpack-hmr#readme",
   "devDependencies": {
-    "fastify": "^3.0.3",
-    "simple-get": "^4.0.0",
-    "standard": "^16.0.0",
-    "tap": "^14.10.7"
+    "fastify": "^4.24.3",
+    "simple-get": "^4.0.1",
+    "standard": "^17.1.0",
+    "tap": "^18.5.2"
   },
   "dependencies": {
-    "fastify-plugin": "^3.0.0",
-    "middie": "^5.3.0",
-    "webpack": "^5.45.1",
-    "webpack-dev-middleware": "^5.0.0",
-    "webpack-hot-middleware": "^2.25.0"
+    "@fastify/middie": "^8.3.0",
+    "fastify-plugin": "^4.5.1",
+    "webpack": "^5.89.0",
+    "webpack-dev-middleware": "^6.1.1",
+    "webpack-hot-middleware": "^2.25.4"
   },
   "nyc": {
     "exclude": [
