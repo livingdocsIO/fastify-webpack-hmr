@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "Webpack hot module reloading for Fastify",
   "main": "plugin.js",
-  "engines": ">=14",
+  "engines": {
+    "node": ">=18.12.0",
+    "npm": ">=9"
+  },
   "scripts": {
     "coverage": "tap test/**/*.test.js --cov",
     "lint": "standard --fix",
@@ -34,9 +37,9 @@
   "dependencies": {
     "@fastify/middie": "^8.3.0",
     "fastify-plugin": "^4.5.1",
-    "webpack": "^5.89.0",
-    "webpack-dev-middleware": "^6.1.1",
-    "webpack-hot-middleware": "^2.25.4"
+    "webpack": "^5.91.0",
+    "webpack-dev-middleware": "^7.2.1",
+    "webpack-hot-middleware": "^2.26.1"
   },
   "nyc": {
     "exclude": [
